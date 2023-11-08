@@ -18,7 +18,7 @@ struct stCompte {
 struct stBanque {
 	stCompte compte;
 };
-void Space()
+void space()
 {
 	cout << "\t\t------------------------------------\n";
 	cout << "\t\t*---\t\tBANK\t\t---*\n";
@@ -30,8 +30,8 @@ void Space()
 	cout << "\t\t*---\t\t\t\t---*\n";
 	cout << "\t\t------------------------------------\n";
 }
-/*ESPACE ADMIN*/
-stCompte ReadCompteAdmin()
+/*Espace ADMIN*/
+stCompte readCompteAdmin()
 {
 	stCompte compte;
 	cout << "Adresse mail : "; cin >> compte.email;
@@ -47,7 +47,7 @@ stCompte ReadCompteAdmin()
 	Sleep(3000);
 	return compte;
 }
-bool VerifCompteAdmin(int carte_cin,stCompte compte)
+bool verifCompteAdmin(int carte_cin,stCompte compte)
 {
 	if (compte.carte_cin == carte_cin)
 	{
@@ -64,7 +64,7 @@ bool VerifCompteAdmin(int carte_cin,stCompte compte)
 		return false;
 	}
 }
-void PrintCompte(stCompte compte)
+void printCompte(stCompte compte)
 {
 	cout << "First Name\t: " << compte.first_name << endl;
 	cout << "Last Name\t: " << compte.last_name << endl;
@@ -73,15 +73,15 @@ void PrintCompte(stCompte compte)
 	cout << "Monney\t: " << compte.money<<" DT" << endl;
 	cout << "Message\t : " << compte.message << endl;
 }
-void PrintAllComptes (stCompte C[],int nbr_c)
+void printAllComptes (stCompte C[],int nbr_c)
 {
 	for (int i = 0; i < nbr_c; i++)
 	{
 		cout << "\nAccount Number" << i + 1 << " :" << endl;
-		PrintCompte(C[i]);
+		printCompte(C[i]);
     }
 }
-void PrintChoiceCompte(stCompte C[], int nbr_c) {
+void printChoiceCompte(stCompte C[], int nbr_c) {
 	cout << "Please enter the Cin : \n";
 	int carte_cin;
 	cin >> carte_cin;
@@ -92,12 +92,12 @@ void PrintChoiceCompte(stCompte C[], int nbr_c) {
 			cout << "Please Wait ...\n";
 			Sleep(3000);
 			system("cls");
-			PrintCompte(C[i]);
+			printCompte(C[i]);
 			break;
 		}
 	}
 }
-void MenuSpaceAdmin()
+void menuSpaceAdmin()
 {
 	cout << endl;
 	cout << "\t\t\t\t(1) - Print Choose Account" << endl;
@@ -106,7 +106,7 @@ void MenuSpaceAdmin()
 	cout << "\t\t\t\t(0) - Back " << endl;
 }
 /*ESPACE Client*/
-int ReadNumberRange(string message, int from, int to)
+int readNumberRange(string message, int from, int to)
 {
 	int number;
 	cout << message << "\n>>";
@@ -118,17 +118,17 @@ int ReadNumberRange(string message, int from, int to)
 	}
 	return number;
 }
-void Welcome()
+void welcome()
 {
 	cout << "\t\t\t*********************************************\n";
-	cout << "\t\t\t*** Welcome in the best bank in the world ***" << endl;
+	cout << "\t\t\t*** welcome in the best bank in the world ***" << endl;
 	cout << "\t\t\t*********************************************\n";
 	cout << "\t\t\t(1) - you have an account ?\n";
 	cout << "\t\t\t(2) - do you want to create a new account?\n";
 	cout << "\t\t\t(0) - Back \n";
 	cout << "\t\t\t*********************************************\n\n";
 }
-void MenuSpaceClient()
+void menuSpaceClient()
 {
 	cout << "\t\t\t\t(1) - Account Statement" << endl;
 	cout << "\t\t\t\t(2) - WithDraaw Monney" << endl;
@@ -137,7 +137,7 @@ void MenuSpaceClient()
 	cout << "\t\t\t\t(5) - Help " << endl;
 	cout << "\t\t\t\t(0) - Back " << endl;
 }
-void AccountStatement(stCompte C[], int nbr_c, int carte_cin)
+void accountStatement(stCompte C[], int nbr_c, int carte_cin)
 {
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -149,7 +149,7 @@ void AccountStatement(stCompte C[], int nbr_c, int carte_cin)
 		}
 	}
 }
-void WithDrawMoney(stCompte C[], int nbr_c, int carte_cin) {
+void withDrawMoney(stCompte C[], int nbr_c, int carte_cin) {
 	int wd;
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -207,7 +207,7 @@ void WithDrawMoney(stCompte C[], int nbr_c, int carte_cin) {
 		}
 	}
 }
-void IncreaseMoney(stCompte C[], int nbr_c, int carte_cin) {
+void increaseMoney(stCompte C[], int nbr_c, int carte_cin) {
 	int wd;
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -233,7 +233,7 @@ void IncreaseMoney(stCompte C[], int nbr_c, int carte_cin) {
 	}
 }
 
-void ClearAccount(stCompte C[], int& nbr_c, int carte_cin)
+void clearAccount(stCompte C[], int& nbr_c, int carte_cin)
 {
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -274,12 +274,12 @@ void connexion()
 			system("cls");
 	}
 }
-void AddAccount(stCompte C[], int& nbr_c, stCompte compte)
+void addAccount(stCompte C[], int& nbr_c, stCompte compte)
 {
 	C[nbr_c] = compte;
 	nbr_c++;
 }
-void Help(stCompte C[], int& nbr_c, int carte_cin)
+void help(stCompte C[], int& nbr_c, int carte_cin)
 {
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -295,7 +295,7 @@ void Help(stCompte C[], int& nbr_c, int carte_cin)
 		}
 	}
 }
-int ReadChoice()
+int readChoice()
 {
 	int number;
 	cout << "Please enter the choice: ";
@@ -306,7 +306,7 @@ int ReadChoice()
 	}
 	return number;
 }
-bool SearchExisteAccount(stCompte C[], int nbr_c, int carte_cin)
+bool searchExisteAccount(stCompte C[], int nbr_c, int carte_cin)
 {
 	for (int i = 0; i < nbr_c; i++)
 	{
@@ -315,7 +315,7 @@ bool SearchExisteAccount(stCompte C[], int nbr_c, int carte_cin)
 	}
 	return false;
 }
-stCompte ReadCompte(stCompte C[], int nbr_c)
+stCompte readCompte(stCompte C[], int nbr_c)
 {
 	stCompte compte;
 	cout << "Adresse mail : "; cin >> compte.email;
@@ -327,7 +327,7 @@ stCompte ReadCompte(stCompte C[], int nbr_c)
 		cout << "incorecct cin contains of 8 caracters......!\n";
 		cout << "Please enter Correct Cin : "; cin >> compte.carte_cin;
 	}
-	while (SearchExisteAccount(C, nbr_c, compte.carte_cin) == false)
+	while (searchExisteAccount(C, nbr_c, compte.carte_cin) == false)
 	{
 		cout << "This Cin does not exist......!\n";
 		cout << "Please enter Correct Cin : "; cin >> compte.carte_cin;
@@ -341,7 +341,7 @@ stCompte ReadCompte(stCompte C[], int nbr_c)
 	system("cls");
 	return compte;
 }
-stCompte CreateCompte(stCompte C[], int nbr_c)
+stCompte createCompte(stCompte C[], int nbr_c)
 {
 	cout << "PLease Enter your Inofrmation\n";
 	stCompte compte;
@@ -363,7 +363,7 @@ stCompte CreateCompte(stCompte C[], int nbr_c)
 		cout << "incorecct cin contains of 8 caracters......!\n";
 		cout << "Please enter Correct Cin : "; cin >> compte.carte_cin;
 	}
-	while (SearchExisteAccount(C, nbr_c, compte.carte_cin))
+	while (searchExisteAccount(C, nbr_c, compte.carte_cin))
 	{
 		cout << "This Acounct is already in use......!\n";
 		cout << "Please enter Correct Cin : "; cin >> compte.carte_cin;
@@ -410,8 +410,8 @@ int main()
 	{
 		system("cls");
 		space:
-		Space();
-		int espace = ReadNumberRange("Please enter your Choice (0 ,1 ,2)", 0, 2);
+		space();
+		int espace = readNumberRange("Please enter your Choice (0 ,1 ,2)", 0, 2);
 		system("cls");
 		if (espace == 0)
 			goto debut;
@@ -419,17 +419,17 @@ int main()
 		else if (espace == 2)
 		{
 			welcom:
-			Welcome();
-			int choice = ReadNumberRange("Please enter your Choice (0 ,1 ,2)", 0, 2);
+			welcome();
+			int choice = readNumberRange("Please enter your Choice (0 ,1 ,2)", 0, 2);
 			system("cls");
 			/*CHOICE 1 HAVE ACCOUNT*/
 			if (choice == 1)
 			{
-				stCompte my_compte = ReadCompte(C, nbr_c);
+				stCompte my_compte = readCompte(C, nbr_c);
 				int Continue = 0;
 				while (Continue == 0)
 				{
-					MenuSpaceClient();
+					menuSpaceClient();
 					int choix;
 					cout << "\n\nPlease enter your Choice: ";
 					cin >> choix;
@@ -448,19 +448,19 @@ int main()
 						break;
 
 					case 1:
-						AccountStatement(C, nbr_c, my_compte.carte_cin);
+						accountStatement(C, nbr_c, my_compte.carte_cin);
 						break;
 					case 2:
-						WithDrawMoney(C, nbr_c, my_compte.carte_cin);
+						withDrawMoney(C, nbr_c, my_compte.carte_cin);
 						break;
 					case 3:
-						IncreaseMoney(C, nbr_c, my_compte.carte_cin);
+						increaseMoney(C, nbr_c, my_compte.carte_cin);
 						break;
 					case 4:
-						ClearAccount(C, nbr_c, my_compte.carte_cin);
+						clearAccount(C, nbr_c, my_compte.carte_cin);
 						break;
 					default:
-						Help(C, nbr_c, my_compte.carte_cin);
+						help(C, nbr_c, my_compte.carte_cin);
 					}
 					system("cls");
 					/* CHoice the user do you continue in your accout or exit*/
@@ -483,7 +483,7 @@ int main()
 				goto space;
 			}
 			else {
-				AddAccount(C, nbr_c, CreateCompte(C, nbr_c));
+				addAccount(C, nbr_c, createCompte(C, nbr_c));
 			}
 		}
 
@@ -492,11 +492,11 @@ int main()
 		{
 		repeats:
 			system("cls");
-			stCompte accountAdmin= ReadCompteAdmin();
+			stCompte accountAdmin= readCompteAdmin();
 			system("cls");
-			if (VerifCompteAdmin(Cin_Admin, accountAdmin) == false)
+			if (verifCompteAdmin(Cin_Admin, accountAdmin) == false)
 			{
-				int rep = ReadNumberRange("\ndo you want repeat: \n1- yes \n2- no\n", 1, 2);
+				int rep = readNumberRange("\ndo you want repeat: \n1- yes \n2- no\n", 1, 2);
 				if (rep == 1)
 					goto repeats;
 				else
@@ -507,19 +507,19 @@ int main()
 				while (Cont == 0)
 				{
 					
-					MenuSpaceAdmin();
+					menuSpaceAdmin();
 					cout << endl;
-					int choice_admin = ReadNumberRange("Please enter your Choice (0 ,1 , 2 , 3)", 0, 3);
+					int choice_admin = readNumberRange("Please enter your Choice (0 ,1 , 2 , 3)", 0, 3);
 					system("cls");
 					switch (choice_admin)
 					{
 					case 0:
 						goto space;
 					case 1:
-						PrintChoiceCompte(C, nbr_c);
+						printChoiceCompte(C, nbr_c);
 						break;
 					case 2:
-						PrintAllComptes(C, nbr_c);
+						printAllComptes(C, nbr_c);
 						break;
 					case 3:
 						int carte;
@@ -529,12 +529,12 @@ int main()
 							cout << "incorecct cin contains of 8 caracters......!\n";
 							cout << "Please enter Correct Cin : "; cin >> carte;
 						}
-						while (SearchExisteAccount(C, nbr_c, carte)==false)
+						while (searchExisteAccount(C, nbr_c, carte)==false)
 						{
 							cout << "This Acounct is already in use......!\n";
 							cout << "Please enter Correct Cin : "; cin >> carte;
 						}
-						ClearAccount(C, nbr_c, carte);
+						clearAccount(C, nbr_c, carte);
 					}
 					/* CHoice the user do you continue in your accout or exit*/
 					cout << "\n\nDo you Want Exit in Your Accouunt:\n";
