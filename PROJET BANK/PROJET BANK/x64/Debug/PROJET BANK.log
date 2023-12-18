@@ -1,2 +1,3 @@
 ﻿  PROJET BANK.cpp
-  PROJET BANK.vcxproj -> C:\Users\DELL\Desktop\FOYER\c++\PROJET BANK\x64\Debug\PROJET BANK.exe
+C:\Users\DELL\Desktop\My-Github\bank-management\PROJET BANK\PROJET BANK\PROJET BANK.cpp(616,11): warning C4129: 'T' : caractère de séquence d'échappement non reconnu
+  PROJET BANK.vcxproj -> C:\Users\DELL\Desktop\My-Github\bank-management\PROJET BANK\x64\Debug\PROJET BANK.exe
